@@ -186,7 +186,7 @@ RegisterNetEvent('qb-doorlock:server:saveNewDoor', function(data, doubleDoor)
 	local src = source
 	if not QBCore.Functions.HasPermission(src, Config.CommandPermission) and not IsPlayerAceAllowed(src, 'command') then
 		if Config.Warnings then
-			showWarning(Lang:t("general.warn_no_permission_newdoor", {player = GetPlayerName(src), license = QBCore.Functions.GetIdentifier(src, 'license'), source = src}))
+			showWarning(Lang:t("general.warn_no_permission_newdoor", {player = GetPlayerName(src), license = QBCore.Functions.GetIdentifier(src, QBConfig.Server.Identifier), source = src}))
 		end
 		return
 	end
